@@ -13,7 +13,7 @@ app.use(express.static("public"));
 
 app.get('/', function(req,res){
 //return something to homepage
-    res.send('Hello World!');
+    res.render('index');
 
 });
 
