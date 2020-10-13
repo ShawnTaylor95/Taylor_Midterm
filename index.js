@@ -6,6 +6,7 @@ var app = express();
 //Port information
 const port = process.env.port || 3000;
 
+
 //tell application to use ejs for templates
 app.set('view engine', 'ejs');
 //make styles public
@@ -25,6 +26,19 @@ app.get('/comic', function(req,res){
         todayData = data;
         res.json(todayData);
     });
+});
+
+app.post('/dailyInfo', function(req,res){
+    data = req.body;
+   fetch('http://xkcd.com/info.0.json', {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+
 });
 
 
