@@ -31,12 +31,11 @@ app.get('/comic', function(req,res){
 app.post('/dailyInfo', function(req,res){
     data = req.body;
    fetch('http://xkcd.com/info.0.json', {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: JSON.stringify(data) // body data type must match "Content-Type" header
+    body: JSON.stringify(data)
   });
 
 });
