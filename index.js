@@ -23,33 +23,9 @@ app.get('/comic', function(req,res){
     fetch('http://xkcd.com/info.0.json')
     .then(res => res.json())
     .then(data => {
-        todayData = data;
-        res.json(todayData);
+        res.render('index', {data: data});
+        console.log(data);
     });
-});
-
-/*app.post('/dailyInfo', function(req,res){
-    data = req.body;
-   fetch('http://xkcd.com/info.0.json', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  });
-
-});*/
-
-app.post('/', function(req,res){
-
-function getDataFromAPI(todayData) {
-    return fetch('http://xkcd.com/info.0.json')
-        .then(response => response.json())
-        .then(todayData => console.log(JSON.stringify(todayData, null, "\t")))
-}
-        getDataFromAPI()
-        console.log(todayData);
-        res.redirect('/')
 });
 
 

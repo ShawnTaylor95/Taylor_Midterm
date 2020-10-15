@@ -17,7 +17,7 @@
         </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="/comic">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="#">Random Comic</a>
     </div>
   </div>
@@ -29,10 +29,13 @@
   <a class="btn btn-primary btn-lg" href="#" role="button">Random comic</a>
 </div>
 
-<!-- <div>
-<form action ="/dailyInfo" method="POST">
-     
-</div> -->
+<div id = "currentComic">
+</p>Title: <b><%= data.safe_title %></b>. </p>
+</p>Date: <b><%= data.month %> - <%=data.day%> - <%=data.year%></b>. </p>
+</p>Description: <b><%= data.alt %></b>. </p>
+<img src="<%=data.img%>" alt="Daily Comic">
+</div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
