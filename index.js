@@ -24,10 +24,19 @@ app.get('/comic', function(req,res){
     .then(res => res.json())
     .then(data => {
         res.render('index', {data: data});
-        console.log(data);
+        //console.log(data);
     });
 });
 
+app.get('/ranComic', function(req,res){
+    let todayData;
+    fetch('http://xkcd.com/614/info.0.json')
+    .then(res => res.json())
+    .then(randomData => {
+        res.render('ranComic', {randomData: randomData});
+        console.log(randomData);
+    });
+});
 
 //Server setup
 app.listen(port,function(){
