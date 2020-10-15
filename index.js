@@ -19,6 +19,7 @@ app.get('/', function(req,res){
 
 });
 
+//fetches comic api data and send it to frontend of /comic
 app.get('/comic', function(req,res){
     fetch('http://xkcd.com/info.0.json')
     .then(res => res.json())
@@ -27,7 +28,7 @@ app.get('/comic', function(req,res){
         //console.log(data);
     });
 });
-
+//fetches random comic api data and send it to frontend of /rancComic
 app.get('/ranComic', function(req,res){
     fetch('http://xkcd.com/614/info.0.json')
     .then(res => res.json())
