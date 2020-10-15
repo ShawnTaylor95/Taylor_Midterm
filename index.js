@@ -19,7 +19,6 @@ app.get('/', function(req,res){
 });
 
 app.get('/comic', function(req,res){
-    let todayData;
     fetch('http://xkcd.com/info.0.json')
     .then(res => res.json())
     .then(data => {
@@ -29,7 +28,6 @@ app.get('/comic', function(req,res){
 });
 
 app.get('/ranComic', function(req,res){
-    let todayData;
     fetch('http://xkcd.com/614/info.0.json')
     .then(res => res.json())
     .then(randomData => {
