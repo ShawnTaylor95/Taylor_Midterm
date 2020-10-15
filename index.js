@@ -14,7 +14,8 @@ app.use(express.static("public"));
 
 app.get('/', function(req,res){
 //return something to homepage
-    res.render('index');
+    //res.render('index');
+    return res.redirect('/comic');
 
 });
 
