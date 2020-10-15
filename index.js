@@ -29,8 +29,10 @@ app.get('/comic', function(req,res){
     });
 });
 //fetches random comic api data and send it to frontend of /rancComic
+
 app.get('/ranComic', function(req,res){
-    fetch('http://xkcd.com/614/info.0.json')
+    
+    fetch('http://xkcd.com/ranNumber/info.0.json')
     .then(res => res.json())
     .then(randomData => {
         res.render('ranComic', {randomData: randomData});
