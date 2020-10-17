@@ -1,15 +1,21 @@
-#currentComic, p{
+#currentComic{
     text-align: center;
+    color:white;
 }
 
 body{
     background-color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 h1{
-    color: red;
+    color: rgb(3, 3, 3);
 }
 
 .jumbotron{
+    background-image: url(/img/comicMidterm.jpg); 
+    background-position: 52% 30%;
     text-align: center;
+    text-shadow: 2px 1px gray;
 }
