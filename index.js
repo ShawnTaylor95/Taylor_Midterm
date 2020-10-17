@@ -19,26 +19,26 @@ app.get('/', function(req,res){
 
 });
 
+
 //fetches comic api data and send it to frontend of /comic
 app.get('/comic', function(req,res){
     fetch('http://xkcd.com/info.0.json')
     .then(res => res.json())
     .then(data => {
         res.render('index', {data: data});
-        //console.log(data);
     });
 });
-//fetches random comic api data and send it to frontend of /rancComic
 
+//fetches random comic api data and send it to frontend of /rancComic
 app.get('/ranComic', function(req,res){
-    
-    fetch('http://xkcd.com/ranNumber/info.0.json')
+    var ranNumber = Math.floor(Math.random() * 2373) + 1;
+    fetch('http://xkcd.com/'+ranNumber+'/info.0.json')
     .then(res => res.json())
     .then(randomData => {
         res.render('ranComic', {randomData: randomData});
-        console.log(randomData);
     });
 });
+
 
 //Server setup
 app.listen(port,function(){
